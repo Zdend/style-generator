@@ -1,0 +1,39 @@
+@import "variables";
+
+.app {
+  height: calc(100% - #{$header-height});
+}
+.app__header {
+  height: $header-height;
+  background: red;
+}
+
+.app__body {
+  display: flex;
+  height: 100%;
+}
+
+.app__left-column {
+  flex: 1;
+  max-width: $sidebar-width;
+  // min-width: $sidebar-width;
+  background: blue;
+  height: 100%;
+}
+
+.app__right-column {
+  flex: 1;
+  background: orange;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.app-right__top {
+  flex: 1;
+  background: violet;
+}
+
+.app-right__bottom {
+  flex: 1;
+}
