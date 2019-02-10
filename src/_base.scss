@@ -1,0 +1,33 @@
+
+html {
+    height: 100%;
+  }
+  
+  body {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    font-family: $font-family-base;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+  
+  code {
+    font-family: $font-family-code;
+  }
+  
+  #root { 
+    height: 100%;
+  }
+  
+  .p1 {
+    padding: 0.5rem;
+  }
+  .p2 {
+    padding: 1rem;
+  }
+  
+  .w-50 {
+    width: 50%;
+  }
+  

@@ -1,0 +1,17 @@
+@import "../../variables";
+
+.module-group__title {
+    font-size: 1.5rem;
+    font-family: $font-family-special;
+}
+
+.form-group {
+    display: flex;
+    flex-wrap: nowrap;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.form-group__half {
+    width: 48%;
+}

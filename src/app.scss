@@ -1,39 +1,59 @@
 @import "variables";
 
 .app {
-  height: calc(100% - #{$header-height});
+  height: 100%;
 }
+
 .app__header {
   height: $header-height;
-  background: red;
 }
 
 .app__body {
   display: flex;
-  height: 100%;
+  height: calc(100% - #{$header-height});
+  background: #fafafa;
 }
 
 .app__left-column {
   flex: 1;
   max-width: $sidebar-width;
-  // min-width: $sidebar-width;
-  background: blue;
+  background: #eee;
   height: 100%;
+  overflow-y: auto;
 }
 
 .app__right-column {
   flex: 1;
-  background: orange;
-  height: 100%;
+  min-height: 100%;
   display: flex;
   flex-direction: column;
 }
 
 .app-right__top {
   flex: 1;
-  background: violet;
+  max-height: 50%;
+  overflow: auto;
 }
 
 .app-right__bottom {
   flex: 1;
+  background: #fff;
+}
+
+@media screen and (max-width: #{$breakpoint-xs}) {
+  .app__header {
+    height: $header-height-sm;
+  }
+  .app__body {
+    height: calc(100% - #{$header-height-sm});
+  }
+}
+
+@media (max-width: #{$breakpoint-xs}) and (orientation: landscape) {
+  .app__header {
+    height: $header-height-xs;
+  }
+  .app__body {
+    height: calc(100% - #{$header-height-xs});
+  }
 }

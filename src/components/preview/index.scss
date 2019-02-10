@@ -1,0 +1,12 @@
+.preview {
+    height: 100%;
+    position: relative;
+}
+
+.preview-component {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    right: 0;
+    transform: translateX(-50%) translateY(-50%);
+}

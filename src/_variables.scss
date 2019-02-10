@@ -1,2 +1,12 @@
-$header-height: 75px;
+$font-family-base: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+"Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
+sans-serif;
+$font-family-special: 'Bree Serif';
+$font-family-code: source-code-pro, Menlo, Monaco, Consolas, "Courier New", monospace;
+
+$header-height: 64px;
+$header-height-sm: 56px;
+$header-height-xs: 48px;
 $sidebar-width: 300px;
+
+$breakpoint-xs: 600px;
