@@ -5,6 +5,7 @@ import './index.scss';
 type StyleResultProps = React.FC<{ ruleState: StateType }>;
 
 const StyleResult: StyleResultProps = ({ ruleState }) => {
+    console.log(getRules(ruleState));
     return (
         <pre className="style-result">
             <code>{getRules(ruleState).map(([key, value]) => (
