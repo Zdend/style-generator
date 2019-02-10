@@ -1,7 +1,8 @@
-import { Hidden } from "@material-ui/core";
+import { serialiseRules } from '../utils/serialiser';
 
 export const initialState = {
     'background-color': { r: 234, g: 100, b: 50, a: 1 },
+    color: { r: 0, g: 0, b: 0, a: 1 },
     width: '200px',
     height: '150px',
 }
@@ -42,17 +43,6 @@ export default function reducer(state: StateType, action: ActionType): StateType
         throw new Error();
     }
 }
-
-export const serialiseRules = (rule: string, v: any) => {
-    switch(rule) {
-        case 'background-color':
-            const { r, g, b, a } = v;
-            return `rgba(${r}, ${g}, ${b}, ${a})`;
-        default:
-            return v;
-    }
-};
-
 
 export const getRule = (state: StateType) => (rule: string) => state[rule];
 
