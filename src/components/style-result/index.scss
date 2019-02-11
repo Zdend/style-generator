@@ -1,9 +1,14 @@
 .style-result {
-    box-sizing: border-box;
+    height: 100%;
+    position: relative;
+}
+.style-result__code {
     height: 100%;
     padding: 1rem;
     margin: 0;
     background: rgb(40, 44, 52);
+    overflow: auto;
+    width: 100%;
 }
 
 .style__block {
@@ -16,4 +21,15 @@
 
 .style__val {
     color: rgb(252, 146, 158);
+}
+
+.style__hidden-away {
+    position: absolute;
+    right: 10000px;
+}
+
+.style__code-btn {
+    position: absolute !important;
+    right: 1rem;
+    top: 1rem;
 }

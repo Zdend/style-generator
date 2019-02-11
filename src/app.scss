@@ -12,6 +12,7 @@
   display: flex;
   height: calc(100% - #{$header-height});
   background: #fafafa;
+  width: 100%;
 }
 
 .app__left-column {
@@ -21,6 +22,11 @@
   height: 100%;
   overflow-y: auto;
   overflow-x: hidden;
+  transition: all 0.3s ease-in-out;
+}
+
+.app__left-column--closed {
+  margin-left: -$sidebar-width;
 }
 
 .app__right-column {
@@ -28,6 +34,7 @@
   min-height: 100%;
   display: flex;
   flex-direction: column;
+  width: 100%;
 }
 
 .app-right__top {
@@ -39,6 +46,7 @@
 .app-right__bottom {
   flex: 1;
   background: #fff;
+  position: relative;
 }
 
 @media screen and (max-width: #{$breakpoint-xs}) {
@@ -48,6 +56,12 @@
   .app__body {
     height: calc(100% - #{$header-height-sm});
   }
+  .app__left-column {
+    height: calc(100% - #{$header-height-sm});
+    min-width: 200px;
+    position: absolute;
+    z-index: 10;
+  }
 }
 
 @media (max-width: #{$breakpoint-xs}) and (orientation: landscape) {
@@ -55,6 +69,9 @@
     height: $header-height-xs;
   }
   .app__body {
+    height: calc(100% - #{$header-height-xs});
+  }
+  .app__left-column {
     height: calc(100% - #{$header-height-xs});
   }
 }

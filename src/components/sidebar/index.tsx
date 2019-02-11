@@ -43,16 +43,40 @@ const Sidebar: SidebarProps = ({ ruleState, ruleDispatch }) => {
                         className="form-group__half"
                         />
                 </div>
-            </ModuleGroup>
-            <ModuleGroup title="Border">
+                <InputLabel>Padding</InputLabel>
                 <Slider
                     className="p1"
-                    value={findRule('border-radius')}
+                    value={findRule('padding', 5)}
+                    min={0}
+                    max={200}
+                    step={1}
+                    onChange={(_, value) => changeRuleCustom('padding', value)}
+                />
+            </ModuleGroup>
+            <ModuleGroup title="Border">
+                <InputLabel>Radius</InputLabel>
+                <Slider
+                    className="p1"
+                    value={findRule('border-radius', 0)}
                     min={0}
                     max={100}
                     step={1}
                     onChange={(_, value) => changeRuleCustom('border-radius', value)}
                     />
+                <InputLabel>Width</InputLabel>
+                <Slider
+                    className="p1"
+                    value={findRule('border-width', 0)}
+                    min={0}
+                    max={100}
+                    step={1}
+                    onChange={(_, value) => changeRuleCustom('border-width', value)}
+                    />
+                <InputLabel>Color</InputLabel>
+                <ColorPicker 
+                    color={findRule('border-color')} 
+                    onChange={(color) => changeRuleCustom('border-color', color.rgb)} 
+                />
             </ModuleGroup>
             <ModuleGroup title="Color">
                 <InputLabel>Background</InputLabel>
@@ -70,27 +94,30 @@ const Sidebar: SidebarProps = ({ ruleState, ruleDispatch }) => {
                 <InputLabel>Size</InputLabel>
                 <Slider
                     className="p1"
-                    value={findRule('font-size')}
+                    value={findRule('font-size', 16)}
                     min={0}
                     max={200}
                     step={1}
                     onChange={(_, value) => changeRuleCustom('font-size', value)}
                 />
-                <FormControl className="w-100">
-                    <InputLabel htmlFor="text-align">
-                        Alignment
-                    </InputLabel>
+                <InputLabel htmlFor="text-align">
+                    Alignment
+                </InputLabel>
                 
-                    <Select
-                        className="w-100"
-                        value={findRule('text-align', 'left')}
-                        onChange={changeRule('text-align')}
-                    >
-                        <MenuItem value="left">Left</MenuItem>
-                        <MenuItem value="center">Center</MenuItem>
-                        <MenuItem value="right">Right</MenuItem>
-                    </Select>
-                </FormControl>
+                
+                <Select
+                    displayEmpty
+                    className="w-100"
+                    value={findRule('text-align', '')}
+                    onChange={changeRule('text-align')}
+                >
+                    <MenuItem value="">
+                        <em>None</em>
+                    </MenuItem>
+                    <MenuItem value="left">Left</MenuItem>
+                    <MenuItem value="center">Center</MenuItem>
+                    <MenuItem value="right">Right</MenuItem>
+                </Select>
             </ModuleGroup>
         </div>
     );
