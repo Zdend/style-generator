@@ -23,7 +23,7 @@ const Sidebar: SidebarProps = ({ ruleState, ruleDispatch }) => {
     return (
         <div className="p1">
             <ModuleGroup title="Dimensions">
-                <div className="form-group">
+                <div className="form-group mb-2">
                     <TextField
                         id="outlined-width"
                         label="Width"
@@ -56,7 +56,7 @@ const Sidebar: SidebarProps = ({ ruleState, ruleDispatch }) => {
             <ModuleGroup title="Border">
                 <InputLabel>Radius</InputLabel>
                 <Slider
-                    className="p1"
+                    className="p1 mb-2"
                     value={findRule('border-radius', 0)}
                     min={0}
                     max={100}
@@ -65,7 +65,7 @@ const Sidebar: SidebarProps = ({ ruleState, ruleDispatch }) => {
                     />
                 <InputLabel>Width</InputLabel>
                 <Slider
-                    className="p1"
+                    className="p1 mb-2"
                     value={findRule('border-width', 0)}
                     min={0}
                     max={100}
@@ -83,6 +83,7 @@ const Sidebar: SidebarProps = ({ ruleState, ruleDispatch }) => {
                 <ColorPicker 
                     color={findRule('background-color')} 
                     onChange={(color) => changeRuleCustom('background-color', color.rgb)} 
+                    className="mb-2"
                 />
                 <InputLabel>Text</InputLabel>
                 <ColorPicker 
@@ -93,7 +94,7 @@ const Sidebar: SidebarProps = ({ ruleState, ruleDispatch }) => {
             <ModuleGroup title="Text">
                 <InputLabel>Size</InputLabel>
                 <Slider
-                    className="p1"
+                    className="p1 mb-2"
                     value={findRule('font-size', 16)}
                     min={0}
                     max={200}
@@ -103,7 +104,6 @@ const Sidebar: SidebarProps = ({ ruleState, ruleDispatch }) => {
                 <InputLabel htmlFor="text-align">
                     Alignment
                 </InputLabel>
-                
                 
                 <Select
                     displayEmpty

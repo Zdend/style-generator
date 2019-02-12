@@ -11,7 +11,7 @@ type StyleResultProps = React.FC<{ ruleState: StateType }>;
 const StyleResult: StyleResultProps = ({ ruleState }) => {
     let textInput = React.createRef<HTMLTextAreaElement>();
     function handleClick() {
-        if (!textInput || !textInput.current || !(textInput.current instanceof HTMLTextAreaElement)) {
+        if (!textInput || !(textInput.current instanceof HTMLTextAreaElement)) {
             return;
         }
         textInput.current.select();

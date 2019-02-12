@@ -3,11 +3,11 @@ import { SketchPicker, SketchPickerProps } from 'react-color';
 import { serialiseRules } from '../../utils/serialiser';
 import './index.scss';
 
-const ColorPicker: React.FC<SketchPickerProps> = ({ color, ...rest }) => {
+const ColorPicker: React.FC<SketchPickerProps & { className?: string }> = ({ color, className = '', ...rest }) => {
     const [ open, toggle ] = useState(false);
 
     return (
-        <div>
+        <div className={className}>
             <button type="button" 
                 onClick={() => toggle(!open)} 
                 className="color-picker__button"

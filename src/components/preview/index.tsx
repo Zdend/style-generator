@@ -14,7 +14,7 @@ const Preview: PreviewProps = ({ ruleState, element }) => {
             {(() => {
                 switch(element) {
                     case 'div': return <div className="preview-component">TEST</div>;
-                    case 'input': return <input type="text" className="preview-component" value="John Doe" />;
+                    case 'input': return <input type="text" className="preview-component" defaultValue="John Doe" />;
                     case 'button': return <button type="button" className="preview-component">Submit</button>;
                     default: return <div className="preview-component">TEST</div>;
                 }
